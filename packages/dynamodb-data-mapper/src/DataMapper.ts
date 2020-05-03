@@ -858,6 +858,38 @@ export class DataMapper {
         } else {
             item = itemOrParameters as T;
         }
+
+        const [expression, key, condition] = this.generateUpdateExpression(
+            item,
+            options
+        );
+
+        return this.doExecuteUpdateExpression(
+            expression,
+            key,
+            getSchema(item),
+            getTableName(item),
+            item.constructor as ZeroArgumentsConstructor<T>,
+            { condition }
+        );
+    }
+
+    /**
+     * Generate an update expression for an UpdateItem operation using the schema accessible via the
+     * {DynamoDbSchema} method and the table name accessible via the
+     * {DynamoDbTable} method on the item supplied.
+     *
+     * @param item      The item to save to DynamoDB
+     * @param options   Options to configure the UpdateItem operation
+     */
+    generateUpdateExpression<T extends StringToAnyObjectMap = StringToAnyObjectMap>(
+        item: T,
+        options: UpdateOptions = {}
+    ): [ 
+        UpdateExpression,
+        {[propertyName: string]: any},
+        ConditionExpression?
+    ] {
         let {
             condition,
             onMissing = 'remove',
@@ -898,14 +930,7 @@ export class DataMapper {
             }
         }
 
-        return this.doExecuteUpdateExpression(
-            expr,
-            itemKey,
-            getSchema(item),
-            getTableName(item),
-            item.constructor  as ZeroArgumentsConstructor<T>,
-            {condition}
-        );
+        return [expr, itemKey, condition];
     }
 
     /**
