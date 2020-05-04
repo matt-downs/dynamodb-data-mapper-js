@@ -795,8 +795,8 @@ var DataMapper = /** @class */ (function () {
      * @param options   Options to configure the UpdateItem operation
      */
     DataMapper.prototype.generateUpdateExpression = function (item, options) {
-        if (options === void 0) { options = {}; }
         var e_10, _a;
+        if (options === void 0) { options = {}; }
         var condition = options.condition, _b = options.onMissing, onMissing = _b === void 0 ? 'remove' : _b, _c = options.skipVersionCheck, skipVersionCheck = _c === void 0 ? this.skipVersionCheck : _c;
         var schema = protocols_1.getSchema(item);
         var expr = new dynamodb_expressions_1.UpdateExpression();

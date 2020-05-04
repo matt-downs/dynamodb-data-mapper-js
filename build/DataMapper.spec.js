@@ -262,8 +262,8 @@ describe('DataMapper', function () {
                             calls = mockDynamoDbClient.batchWriteItem.mock.calls;
                             expect(calls.length).toBe(4);
                             callCount = calls.reduce(function (keyUseCount, _a) {
-                                var _b = tslib_1.__read(_a, 1), foo = _b[0].RequestItems.foo;
-                                var e_7, _c;
+                                var e_7, _b;
+                                var _c = tslib_1.__read(_a, 1), foo = _c[0].RequestItems.foo;
                                 try {
                                     for (var foo_1 = tslib_1.__values(foo), foo_1_1 = foo_1.next(); !foo_1_1.done; foo_1_1 = foo_1.next()) {
                                         var key = foo_1_1.value.DeleteRequest.Key.fizz.N;
@@ -278,7 +278,7 @@ describe('DataMapper', function () {
                                 catch (e_7_1) { e_7 = { error: e_7_1 }; }
                                 finally {
                                     try {
-                                        if (foo_1_1 && !foo_1_1.done && (_c = foo_1.return)) _c.call(foo_1);
+                                        if (foo_1_1 && !foo_1_1.done && (_b = foo_1.return)) _b.call(foo_1);
                                     }
                                     finally { if (e_7) throw e_7.error; }
                                 }
@@ -847,8 +847,8 @@ describe('DataMapper', function () {
                             expect(itemsReturned).toBe(325);
                             calls = mockDynamoDbClient.batchGetItem.mock.calls;
                             callCount = calls.reduce(function (keyUseCount, _a) {
-                                var _b = tslib_1.__read(_a, 1), Keys = _b[0].RequestItems.foo.Keys;
-                                var e_18, _c;
+                                var e_18, _b;
+                                var _c = tslib_1.__read(_a, 1), Keys = _c[0].RequestItems.foo.Keys;
                                 try {
                                     for (var Keys_1 = tslib_1.__values(Keys), Keys_1_1 = Keys_1.next(); !Keys_1_1.done; Keys_1_1 = Keys_1.next()) {
                                         var key = Keys_1_1.value.fizz.N;
@@ -863,7 +863,7 @@ describe('DataMapper', function () {
                                 catch (e_18_1) { e_18 = { error: e_18_1 }; }
                                 finally {
                                     try {
-                                        if (Keys_1_1 && !Keys_1_1.done && (_c = Keys_1.return)) _c.call(Keys_1);
+                                        if (Keys_1_1 && !Keys_1_1.done && (_b = Keys_1.return)) _b.call(Keys_1);
                                     }
                                     finally { if (e_18) throw e_18.error; }
                                 }
@@ -1156,8 +1156,8 @@ describe('DataMapper', function () {
                             calls = mockDynamoDbClient.batchWriteItem.mock.calls;
                             expect(calls.length).toBe(4);
                             callCount = calls.reduce(function (keyUseCount, _a) {
-                                var _b = tslib_1.__read(_a, 1), foo = _b[0].RequestItems.foo;
-                                var e_25, _c;
+                                var e_25, _b;
+                                var _c = tslib_1.__read(_a, 1), foo = _c[0].RequestItems.foo;
                                 try {
                                     for (var foo_2 = tslib_1.__values(foo), foo_2_1 = foo_2.next(); !foo_2_1.done; foo_2_1 = foo_2.next()) {
                                         var key = foo_2_1.value.PutRequest.Item.fizz.N;
@@ -1172,7 +1172,7 @@ describe('DataMapper', function () {
                                 catch (e_25_1) { e_25 = { error: e_25_1 }; }
                                 finally {
                                     try {
-                                        if (foo_2_1 && !foo_2_1.done && (_c = foo_2.return)) _c.call(foo_2);
+                                        if (foo_2_1 && !foo_2_1.done && (_b = foo_2.return)) _b.call(foo_2);
                                     }
                                     finally { if (e_25) throw e_25.error; }
                                 }

@@ -6,6 +6,6 @@ import { GetItemInput } from "aws-sdk/clients/dynamodb";
  */
 export declare class ItemNotFoundException extends Error {
     readonly itemSought: GetItemInput;
-    readonly name: string;
+    readonly name = "ItemNotFoundException";
     constructor(itemSought: GetItemInput, message?: string);
 }

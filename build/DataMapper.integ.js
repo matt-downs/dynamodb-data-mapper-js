@@ -1,8 +1,8 @@
 "use strict";
+var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var _a;
-var _this = this;
 var DataMapper_1 = require("./DataMapper");
 var ItemNotFoundException_1 = require("./ItemNotFoundException");
 var protocols_1 = require("./protocols");

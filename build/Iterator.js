@@ -96,10 +96,10 @@ var Iterator = /** @class */ (function () {
                         }];
                 }
                 return [2 /*return*/, this.paginator.next().then(function (_a) {
-                        var _b = _a.value, value = _b === void 0 ? [] : _b, done = _a.done;
-                        var _c;
+                        var _b;
+                        var _c = _a.value, value = _c === void 0 ? [] : _c, done = _a.done;
                         if (!done) {
-                            (_c = _this.pending).push.apply(_c, tslib_1.__spread(value));
+                            (_b = _this.pending).push.apply(_b, tslib_1.__spread(value));
                             return _this.getNext();
                         }
                         _this.lastYielded = undefined;

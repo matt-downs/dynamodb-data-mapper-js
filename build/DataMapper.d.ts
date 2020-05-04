@@ -251,7 +251,7 @@ export declare class DataMapper {
      */
     generateUpdateExpression<T extends StringToAnyObjectMap = StringToAnyObjectMap>(item: T, options?: UpdateOptions): [UpdateExpression, {
         [propertyName: string]: any;
-    }, ?ConditionExpression];
+    }, ConditionExpression?];
     /**
      * Execute a custom update expression using the schema and table name
      * defined on the provided `valueConstructor`.
